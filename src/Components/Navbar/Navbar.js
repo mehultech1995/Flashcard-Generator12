@@ -1,6 +1,8 @@
 import React from 'react'
 import Logo from './logo.png'
 
+
+//Navbar component
 const Navbar = () => {
     return (
         <div className='h-14 w-screen fixed z-50 bg-white dark:bg-[#1e2125] flex items-center space-between drop-shadow-md'>

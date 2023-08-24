@@ -99,9 +99,12 @@ const CreateFlashCards = () => {
                     name='Create_Group' />
                 </div>
                 <div>
+
                   {/* it's a image upload button 
                   if image is present it's shows the image preview with delete icon to delete image
                   if image is not present its shows image uploading button */}
+                  {/* Select The Image from Dekstop */}
+
                   {
                     values.uploadimage ? (<div className='flex '> <img className='h-16 mt-2' src={values.uploadimage} alt="" /> <TiDeleteOutline className='text-3xl text-red-600' onClick={() => setFieldValue("uploadimage", '')} /> </div>) :
                       (<label htmlFor='uploadimage'
@@ -208,9 +211,12 @@ const CreateFlashCards = () => {
                             name={`term.${index}.Enter_Definition`} />
                         </div>
                         <div className='flex'>
+                          
                           {/* it's a image upload button 
                           if image is present it's shows the image preview with delete icon to delete image 
                           if image is not present its shows image uploading button */}
+                          {/* Select The Image from Dekstop */}
+
                           {
                             term.term_uploadimage ? ((<div className='flex  '> <img className='h-16 mt-2  max-w-[12rem]' src={term.term_uploadimage} alt="" /> <TiDeleteOutline className='text-3xl text-red-600' onClick={() => setFieldValue(`term.${index}.term_uploadimage`, '')} /> </div>)) :
                               (<label htmlFor={`term.${index}.term_uploadimage`} className="w-44 h-[38px] cursor-pointer px-3 mx-3 mt-8 py-1 bg-gray-100 border border-blue-600 flex  items-center justify-center  rounded" >

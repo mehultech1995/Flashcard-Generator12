@@ -1,6 +1,6 @@
 
 const initialValues = {
-    cards: localStorage.getItem("data")?JSON.parse(localStorage.getItem("data")):[]
+    cards: localStorage.getItem("data") ? JSON.parse(localStorage.getItem("data")) : []
 }
 
 const flashcardReducers = (state = initialValues, action) => {
@@ -8,7 +8,7 @@ const flashcardReducers = (state = initialValues, action) => {
         case "CREATE_GROUP":
 
             const { id, data } = action.payload;
-                localStorage.setItem("data",JSON.stringify([...state.cards,{id,...data}]))
+            localStorage.setItem("data", JSON.stringify([...state.cards, { id, ...data }]))
             return {
 
                 cards: [
@@ -19,17 +19,15 @@ const flashcardReducers = (state = initialValues, action) => {
                     }
                 ]
             }
-
-
         case "DELETE_GROUP":
 
             const newCards = state.cards.filter((elem) => elem.id !== action.id)
-            localStorage.setItem("data",JSON.stringify([...newCards]))
+            localStorage.setItem("data", JSON.stringify([...newCards]))
 
             return {
                 ...state,
-                cards:newCards
-                
+                cards: newCards
+
             }
 
         default: return state
